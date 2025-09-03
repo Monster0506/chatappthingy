@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateConnectionStatus('Connecting...', null);
     toggleChatInput(false);
 
-    ws = new WebSocket('wss://1125ed6ebdd9.ngrok-free.app');
+    ws = new WebSocket('wss://chatappthingy.onrender.com');
 
     ws.onopen = () => {
       updateConnectionStatus('Connected!', true);
