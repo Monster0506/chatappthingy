@@ -1,0 +1,201 @@
+/* Basic Reset & Body Styling */
+body {
+  font-family:
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  background: linear-gradient(to right, #6dd5ed, #2193b0); /* Nice blue gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: #333;
+}
+
+/* Chat Wrapper */
+.chat-wrapper {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between sections */
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.2em;
+}
+
+/* Connection Status */
+.connection-status {
+  text-align: center;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+  color: #555;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.connection-status.connected {
+  background-color: #e6ffe6; /* Light green */
+  color: #28a745; /* Darker green */
+}
+
+.connection-status.disconnected {
+  background-color: #ffe6e6; /* Light red */
+  color: #dc3545; /* Darker red */
+}
+
+/* Username Section */
+.username-section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.username-section label {
+  font-weight: bold;
+  color: #555;
+}
+
+.username-section input {
+  flex-grow: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+  outline: none;
+}
+
+.username-section input:focus {
+  border-color: #007bff;
+}
+
+.username-section button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.username-section button:hover {
+  background-color: #0056b3;
+}
+
+/* Chat Messages Display */
+.chat-messages {
+  border: 1px solid #eee;
+  padding: 15px;
+  min-height: 250px;
+  max-height: 400px; /* Make it scrollable if too many messages */
+  overflow-y: auto;
+  background-color: #fefefe;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; /* Stack messages vertically */
+  gap: 10px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background-color: #b0d3e0;
+  border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+.message-item {
+  background-color: #e9f5ff; /* Light blue bubble */
+  padding: 10px 15px;
+  border-radius: 15px 15px 15px 0; /* Chat bubble shape */
+  max-width: 80%;
+  align-self: flex-start; /* Default align left */
+  word-wrap: break-word; /* Prevents overflow for long words */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.message-item.my-message {
+  background-color: #dcf8c6; /* Light green for current user's messages */
+  border-radius: 15px 15px 0 15px; /* Chat bubble shape */
+  align-self: flex-end; /* Align right */
+}
+
+.message-item strong {
+  color: #0056b3; /* Darker blue for username */
+  margin-right: 5px;
+}
+
+.message-item.my-message strong {
+  color: #28a745; /* Darker green for current user's name */
+}
+
+.message-timestamp {
+  font-size: 0.75em;
+  color: #888;
+  margin-left: 10px;
+}
+
+/* Chat Input Section */
+.chat-input-section {
+  display: flex;
+  gap: 10px;
+}
+
+#messageInput {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.05em;
+  outline: none;
+}
+
+#messageInput:focus {
+  border-color: #007bff;
+}
+
+#sendBtn {
+  padding: 12px 20px;
+  background-color: #28a745; /* Green send button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.05em;
+  transition: background-color 0.3s ease;
+}
+
+#sendBtn:hover:not([disabled]) {
+  background-color: #218838;
+}
+
+#sendBtn:disabled,
+#messageInput:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}

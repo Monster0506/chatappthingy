@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real-Time WebSocket Chat</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="chat-wrapper">
+      <h1>WebSocket Chat</h1>
+
+      <div class="connection-status" id="connectionStatus">
+        Connecting...
+      </div>
+
+      <div class="username-section">
+        <label for="usernameInput">Your Name:</label>
+        <input
+          type="text"
+          id="usernameInput"
+          placeholder="Enter your name"
+          maxlength="20"
+          aria-label="Your Name"
+        />
+        <button id="saveUsernameBtn">Save</button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <!-- Messages will be appended here by JavaScript -->
+      </div>
+
+      <div class="chat-input-section">
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Type your message..."
+          aria-label="Your Message"
+          disabled
+        />
+        <button id="sendBtn" disabled>Send</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
